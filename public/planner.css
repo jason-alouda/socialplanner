@@ -1,0 +1,334 @@
+/***** Global Elements *****/
+
+:root {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fafafa;
+}
+
+h1 {
+  font-size: large;
+}
+
+h2 {
+  font-size: medium;
+}
+
+label {
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+}
+
+button {
+  padding: 0.3rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: solid 1px #8C1515;
+  border-radius: 0.75rem;
+  background-color: #8C1515;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #fa867a;
+}
+
+button.secondary {
+  background-color: white;
+  color: #8C1515;
+}
+
+button.secondary:hover {
+  background-color: #fa867a;
+}
+
+input {
+  background-color: #e6ecf0;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+input:focus {
+  background-color: white;
+  border: 1px solid #ccd6dd;
+}
+
+/***** Generic Containers ******/
+
+.divider {
+  margin: 3rem 0;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+
+.widthContainer {
+  flex-grow: 1;
+  max-width: 1280px;
+}
+
+.paper {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.6rem;
+  box-shadow: 1px 1px 1px 1px lightgray;
+}
+
+/***** Header *****/
+
+.brand {
+  color: #8C1515;
+  font-weight: 700;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccd6dd;
+  background-color: white;
+}
+
+#header .widthContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header h1 {
+  font-weight: 600;
+}
+
+#header input {
+  font-size: 1rem;
+  width: 200px;
+}
+
+#header #loginForm {
+  display: flex;
+  align-items: center;
+}
+
+#header #loginForm > *:not(last-of-type) {
+  margin-right: 1rem;
+}
+
+
+/***** Main *****/
+
+#main {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  animation: fadein 1s;
+}
+/*
+#main.hidden, #templatePost {
+  display: none;
+}
+*/
+
+#main .widthContainer {
+  display: flex;
+  flex-grow: 1;
+}
+
+/***** Feed *****/
+
+#plannerPanel {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/***** Sidebar *****/
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1rem;
+  width: calc(30% - 1rem);
+}
+
+#editPanel {
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+}
+
+#editPanel > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1.25rem 0;
+}
+
+#editPanel h2, #followPanel h2 {
+  font-size: x-large;
+  font-weight: 300;
+}
+
+#editPanel label {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+#followPanel {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.5rem 1.5rem 1rem 1.5rem;
+}
+
+#followContainer ul {
+  list-style: none;
+  padding: 0 0 0 1.5rem;
+}
+
+#followContainer li > *:first-child {
+  margin-right: 1rem;
+}
+
+#followContainer .deleteButton {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: red;
+}
+
+#followContainer form {
+  display: flex;
+}
+
+#followContainer input {
+  margin-right: 1rem;
+  flex-grow: 1;
+  font-size: 1rem;
+  min-width: 0;
+}
+
+/***** Editable Text *****/
+
+.editableInput {
+  width: 100%;
+}
+
+.editableText {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.editableText > span {
+  flex-grow: 1;
+  margin-right: 0.5rem;
+  background-color: #ccd6dd;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+/***** Animations *****/
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#main.hidden, #templatePost {
+  display: none;
+}
+
+/***** Welcome *****/
+
+#welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#welcome.hidden {
+  display: none;
+}
+
+#welcome h1 {
+  font-size: 1.8em;
+  font-weight: 300;
+}
+
+#welcome .paper {
+  width: 50%;
+  text-align: center;
+}
+
+#addGoalContainer {
+  display:flex;
+  margin-top: -60px;
+  margin-bottom: 50px;
+  width: 250px;
+  flex-direction: column;
+  margin-left: 100px;
+  border-style: solid;
+  border: 2px solid red;
+  border-radius: 3px;
+}
+
+#addGoalContainer.hidden {
+  display: none;
+}
+
+#instruction.hidden {
+  display: none;
+}
+
+#instruction {
+  animation: fade 5s infinite;
+}
+
+#loginTools, #extras {
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 1px solid #ccd6dd;
+  margin-right: 0.5rem;
+  width: 3em;
+  height: 3em;
+}
+
+#side_profile {
+  display: flex;
+  flex-direction: row;
+  display:inline-block
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

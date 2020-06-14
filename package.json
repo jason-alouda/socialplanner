@@ -1,0 +1,30 @@
+{
+  "name": "@cs193x/project-SUNET",
+  "version": "1.0.0",
+  "description": "CS193X Project",
+  "author": "TODO",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chokidar": "^3.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.7",
+    "nodemon": "^2.0.3",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon"
+  },
+  "nodemonConfig": {
+    "signal": "SIGTERM",
+    "watch": [
+      "api",
+      "lib",
+      "server.js"
+    ]
+  }
+}

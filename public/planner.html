@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>The Social Media Planner</title>
+
+    <!-- These two lines provide automatic page and style reloading when files change -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/lib/client/updater.js" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+
+    <!-- Open Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="planner.css">
+    <script type="module" src="planner.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="widthContainer">
+        <h1 class="brand">Social Planner</h1>
+        <span id="loginTools">
+          <!--<input style="margin-right: 1rem" name="userid" placeholder="User ID" id="userid"> -->
+          <form id="loginForm">
+            <div id="signin"></div>
+          </form>
+        </span>
+      <!--
+        <input password="userid" placeholder="Password">
+        <button type="submit" id="login">Login</button>
+      -->
+        <span id="extras">
+          <button  style="margin-right: 1rem" type="button" id="listUsers" class="secondary">List Users</button>
+          <form action="https://doist.com/blog/eisenhower-matrix/" method="get" target="_blank">
+            <button class="secondary" type="submit">Learn more</button>
+          </form>
+        </span>
+      </div>
+    </header>
+
+    <main id="welcome">
+      <div class="paper">
+        <h1>Welcome to <span class="brand">Social Planner</span></h1>
+        <h2>Log in to view your planner</h2>
+      </div>
+    </main>
+
+    <main id="main" class="hidden">
+      <div class="widthContainer">
+        <section id="plannerPanel">
+          <canvas id="canvas"></canvas>
+        </section>
+      </div>
+
+      <!-- Sidebar taken from assign3 -->
+      <section id="sidebar">
+        <section id="editPanel" class="paper">
+          <h2>Your Profile</h2>
+          <div id="side_profile">
+            <span>
+              <label style="display:inline-block" >User ID:</label>
+              <div style="display:inline-block" id="idContainer"></div>
+            </span>
+            <img class="avatar" src="images/default.png" alt="Your avatar">
+          </div>
+          <div>
+            <label for="nameInput">Display Name:</label>
+            <div id="nameContainer"></div>
+          </div>
+          <div>
+            <label for="avatarInput">Avatar URL:</label>
+            <div id="avatarContainer"></div>
+          </div>
+        </section>
+        <section id="followPanel" class="paper">
+          <h2>Following:</h2>
+          <div id="followContainer"></div>
+        </section>
+      </section>
+    </main>
+    <div style="margin-left: 5rem" id="instruction" class="brand" class="hidden">
+      Click to add a goal! <br>
+      Click on a goal to remove it!
+    </div>
+    <div id="addGoalContainer" class="hidden">
+      <label style="margin: 10px">Goal type: <div id="goalType" style="color:blue"></div> </label>
+      <label style="margin: 10px; font-size: 10px; display:none">x: <div id="xCoordinate" style="color:blue"></div> </label>
+      <label style="margin: 10px; font-size: 10px; display:none">y: <div id="yCoordinate" style="color:blue"></div> </label>
+      <form id="formID" style="margin: 10px">
+        <label for="goal">Goal:</label><br>
+        <input type="text" id="goal" goal="goal"><br>
+      <!--
+        <label for="dateStarted">Date started:</label><br>
+        <input type="text" id="dateStarted" dateStarted="dateStarted"><br>
+      -->
+        <br>
+        <input id="submitID" type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
