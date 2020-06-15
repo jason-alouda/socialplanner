@@ -221,7 +221,11 @@ class App {
   async _onListUsers() {
     let users = await User.listUsers();
     let usersStr = users.join("\n");
-    alert(`List of users:\n\n${usersStr}`);
+    if (this._user.id === "Jason Ah Chuen") {
+      alert(`List of users:\n\n${usersStr}`);
+    } else {
+      alert("Permission Denied. Ask friend for their user ids to follow them.");
+    }
   }
 
   async _onLogin() {
